@@ -43,47 +43,47 @@
 这是一个前后端分离、服务解耦的现代化Web应用，旨在实现低成本、高可用的长期部署。
 
 ### 前端 (Frontend)
-技术栈: HTML, CSS, Vanilla JavaScript (构建为单页应用 SPA)
+- 技术栈: HTML, CSS, Vanilla JavaScript (构建为单页应用 SPA)
 
-部署: Cloudflare Pages - 提供全球CDN加速和持续集成。
+- 部署: Cloudflare Pages - 提供全球CDN加速和持续集成。
 
 ### 逻辑后端 (Logic Backend)
-技术栈: FastAPI (Python 框架)
+- 技术栈: FastAPI (Python 框架)
 
-职责: 处理API请求、调用LLM服务、与数据库交互。
+- 职责: 处理API请求、调用LLM服务、与数据库交互。
 
-部署: Hugging Face Spaces (CPU实例) - 实现Serverless和按需启动。
+- 部署: Hugging Face Spaces (CPU实例) - 实现Serverless和按需启动。
 
 ### AI计算后端 (AI Backend)
-技术栈: Stable Diffusion WebUI + 自定义LoRA模型 + ControlNet
+- 技术栈: Stable Diffusion WebUI + 自定义LoRA模型 + ControlNet
 
-职责: 接收Prompt和参数，生成核心图像。
+- 职责: 接收Prompt和参数，生成核心图像。
 
-部署: 独立的云GPU平台 (如 AutoDL, Vast.ai 等)，通过 Cloudflare Tunnel 暴露安全的API接口。
+- 部署: 独立的云GPU平台 (如 AutoDL, Vast.ai 等)，通过 Cloudflare Tunnel 暴露安全的API接口。
 
 ### 文本生成 (Text Generation)
-服务: Google Gemini API
+- 服务: Google Gemini API
 
-职责: 生成所有创意文本，包括地点名称、旅行日志和地图坐标。
+- 职责: 生成所有创意文本，包括地点名称、旅行日志和地图坐标。
 
 ### 数据库与存储 (Database & Storage)
-服务: Supabase
+- 服务: Supabase
 
-职责: 使用 PostgreSQL 数据库存储明信片的文本数据，使用 Storage 服务永久存储生成的图片文件。
+- 职责: 使用 PostgreSQL 数据库存储明信片的文本数据，使用 Storage 服务永久存储生成的图片文件。
 
 ## 如何本地部署 👨‍💻
 ### 1. 准备环境
 本地已安装并成功运行的 Stable Diffusion WebUI，并已加载：
 
-基础Checkpoint模型 (例如 AnythingV5)
+- 基础Checkpoint模型 (例如 AnythingV5)
 
-您自己训练的 xiantiaogou_style.safetensors LoRA模型。
+- 您自己训练的 xiantiaogou_style.safetensors LoRA模型。
 
-对应的 control_v11p_sd15_canny ControlNet模型。
+- 对应的 control_v11p_sd15_canny ControlNet模型。
 
-Python 3.9+
+- Python 3.9+
 
-Node.js 和 npm/pnpm
+- Node.js 和 npm/pnpm
 
 ### 2. 启动AI计算后端
 在 stable-diffusion-webui 目录下，编辑 webui-user.sh (或 .bat) 文件。
@@ -135,18 +135,18 @@ SUPABASE_KEY="your_supabase_anon_key"
 ```
 
 ### 4. 启动前端
-前端代码位于 frontend 目录，可以直接在浏览器中打开 index.html 进行测试，或使用 live-server 等工具启动。
+- 前端代码位于 frontend 目录，可以直接在浏览器中打开 index.html 进行测试，或使用 live-server 等工具启动。
 
 注意: 确保前端JS代码中的API请求地址指向你本地运行的FastAPI后端 (例如 http://127.0.0.1:8000)。
 
 ## 最大的挑战与最满意的设计 ❤️
 ### 最大的挑战
-前端UI健壮性: 由于明信片内容（图片尺寸、文字长度）由AI动态生成，使用纯CSS构建一个能稳定适应各种动态内容的布局，避免元素溢出或重叠，是一个巨大的挑战。
+- 前端UI健壮性: 由于明信片内容（图片尺寸、文字长度）由AI动态生成，使用纯CSS构建一个能稳定适应各种动态内容的布局，避免元素溢出或重叠，是一个巨大的挑战。
 
-交互流程打磨: 如何将一个简单的“输入->输出”流程，设计成一个充满“冒险”和“惊喜”感的体验，花费了大量时间进行推演和迭代。
+- 交互流程打磨: 如何将一个简单的“输入->输出”流程，设计成一个充满“冒险”和“惊喜”感的体验，花费了大量时间进行推演和迭代。
 
 ### 最满意的设计
-“惊喜包裹”交互。这个设计将用户在等待生成结果时的枯燥感，巧妙地转化为了“等待礼物”的期待感。用户亲手“拆开”包裹的动作，极大地增强了最终获得明信片时的仪式感和满足感，是整个产品从冰冷工具变得温暖、充满人情味的点睛之-笔。
+- “惊喜包裹”交互。这个设计将用户在等待生成结果时的枯燥感，巧妙地转化为了“等待礼物”的期待感。用户亲手“拆开”包裹的动作，极大地增强了最终获得明信片时的仪式感和满足感，是整个产品从冰冷工具变得温暖、充满人情味的点睛之-笔。
 
 ## 致谢 🙏
 感谢 Stable Diffusion 社区和所有模型创作者。
