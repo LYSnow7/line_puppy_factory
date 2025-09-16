@@ -1,7 +1,8 @@
 # 爪印迷途（Pawprint Lost）
 
 > 一个将你 fleeting 的情绪，物化为一份可以被珍藏和回顾的、独一-无二的数字艺术品(旅行明信片) 的AIGC应用。
-> 在线演示：https://www.youtube.com/watch?v=2kYkB8aImOg
+
+在线演示：https://www.youtube.com/watch?v=2kYkB8aImOg
 
 ## 项目简介
 
