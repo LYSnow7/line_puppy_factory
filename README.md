@@ -92,7 +92,10 @@ Node.js 和 npm/pnpm
 
 export COMMANDLINE_ARGS="--listen --api --skip-torch-cuda-test --server-name 0.0.0.0"
 
-启动服务: ./webui.sh
+启动服务: 
+```bash
+./webui.sh
+```
 
 通过Cloudflare Tunnel等工具将 http://127.0.0.1:7860 暴露到公网，获得一个类似 https://your-tunnel.trycloudflare.com 的URL。
 
