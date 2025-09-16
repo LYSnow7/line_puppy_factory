@@ -100,25 +100,39 @@ export COMMANDLINE_ARGS="--listen --api --skip-torch-cuda-test --server-name 0.0
 通过Cloudflare Tunnel等工具将 http://127.0.0.1:7860 暴露到公网，获得一个类似 https://your-tunnel.trycloudflare.com 的URL。
 
 ### 3. 启动逻辑后端
-克隆本仓库: git clone https://github.com/your-username/line-puppy-adventure.git
+克隆本仓库: 
+```bash
+git clone https://github.com/your-username/line-puppy-adventure.git
+```
 
-进入后端目录: cd line-puppy-adventure/backend
+进入后端目录: 
+```bash
+cd line-puppy-adventure/backend
+```
 
 创建并激活虚拟环境:
-
+```bash
 python -m venv venv
 source venv/bin/activate
+```
 
-安装依赖: pip install -r requirements.txt
+安装依赖:
+```bash
+pip install -r requirements.txt
+```
 
 设置环境变量: 创建一个 .env 文件，并填入以下内容：
-
+```bash
 STABLE_DIFFUSION_API_URL="[https://your-tunnel.trycloudflare.com/sdapi/v1/txt2img](https://your-tunnel.trycloudflare.com/sdapi/v1/txt2img)" # 替换为你的SD API地址
 GEMINI_API_KEY="your_google_gemini_api_key"
 SUPABASE_URL="your_supabase_project_url"
 SUPABASE_KEY="your_supabase_anon_key"
+```
 
-启动FastAPI服务: uvicorn main:app --reload
+启动FastAPI服务:
+```bash
+ uvicorn main:app --reload
+```
 
 ### 4. 启动前端
 前端代码位于 frontend 目录，可以直接在浏览器中打开 index.html 进行测试，或使用 live-server 等工具启动。
@@ -141,4 +155,4 @@ SUPABASE_KEY="your_supabase_anon_key"
 
 感谢 Hugging Face, Cloudflare, 和 Supabase 提供了强大的Serverless平台和后端服务。
 
-由 雪 创建
+由雪创建
