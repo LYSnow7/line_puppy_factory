@@ -138,4 +138,4 @@ SUPABASE_KEY="your_supabase_anon_key"
 
 感谢 Hugging Face, Cloudflare, 和 Supabase 提供了强大的Serverless平台和后端服务。
 
-由 [Your Name] 创建 <!-- 替换为你的名字 -->
+由 雪 创建
