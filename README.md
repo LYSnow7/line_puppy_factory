@@ -137,7 +137,7 @@ SUPABASE_KEY="your_supabase_anon_key"
 ### 4. 启动前端
 - 前端代码位于 frontend 目录，可以直接在浏览器中打开 index.html 进行测试，或使用 live-server 等工具启动。
 
-注意: 确保前端JS代码中的API请求地址指向你本地运行的FastAPI后端 (例如 http://127.0.0.1:8000)。
+- 注意: 确保前端JS代码中的API请求地址指向你本地运行的FastAPI后端 (例如 http://127.0.0.1:8000)。
 
 ## 最大的挑战与最满意的设计 ❤️
 ### 最大的挑战
